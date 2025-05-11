@@ -17,7 +17,7 @@ bool	parse_args(int argc, char **argv)
 	int	i;
 
 	if (argc < 5 || argc > 6)
-		return (printf("Error: Invalid number of arguments.\n"));
+		return (printf("Error: Invalid number of arguments.\n"), false);
 	i = 1;
 	while (i < argc)
 	{

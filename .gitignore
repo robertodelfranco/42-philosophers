@@ -1,0 +1,10 @@
+.vscode/
+
+*.pdf
+
+objs/
+*.o
+
+philo
+
+philo_bonus
