@@ -26,6 +26,9 @@ bool	parse_args(int argc, char **argv)
 				false);
 		i++;
 	}
+	if (ft_atoi(argv[1]) > 200)
+		return (printf("Error: Number of philosophers must be less than 200.\n"),
+			false);
 	return (true);
 }
 
@@ -39,10 +42,6 @@ int	main(int argc, char **argv)
 	if (!table)
 		return (printf("Error: Memory allocation failed.\n"), 1);
 	init_table(table, argv);
-	if (table->num_philosophers < MIN_PHILOSOPHERS
-		|| table->num_philosophers > MAX_PHILOSOPHERS)
-		return (printf("Error: Number of philos must be between %d and %d\n",
-				MIN_PHILOSOPHERS, MAX_PHILOSOPHERS), 1);
 	table->philosophers = (t_philosopher *)ft_calloc(table->num_philosophers,
 			sizeof(t_philosopher));
 	table->forks = (pthread_mutex_t *)ft_calloc(table->num_philosophers,

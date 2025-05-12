@@ -1,10 +1,11 @@
+# folders
 .vscode/
-
-*.pdf
-
 objs/
+
+# files
+*.pdf
 *.o
 
-philo
-
+# executables
+*.out
 philo_bonus
