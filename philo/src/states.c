@@ -29,9 +29,6 @@ void	eating(t_philosopher *philo)
 	start_time = now_ms();
 	while (keep_running(table) && now_ms() - start_time < table->time_to_eat)
 		usleep(200);
-	pthread_mutex_lock(&table->death_mutex);
-	philo->last_meal_time = start_time;
-	pthread_mutex_unlock(&table->death_mutex);
 }
 
 void	sleeping(t_philosopher *philo)
