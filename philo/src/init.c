@@ -51,10 +51,12 @@ void	init_table(t_table *table, char **argv)
 		table->total_meals = LONG_MAX;
 	table->is_dead = false;
 	table->all_ate = false;
-	if (table->time_to_die - table->time_to_eat < 0)
+	if ((table->time_to_die - (table->time_to_sleep + table->time_to_eat)) - 1
+		<= 0)
 		table->time_to_think = 0;
 	else
-		table->time_to_think = 5;
+		table->time_to_think = (table->time_to_die - (table->time_to_sleep
+					+ table->time_to_eat)) - 1;
 }
 
 void	init_mutex(t_table *table)
